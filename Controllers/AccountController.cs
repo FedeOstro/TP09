@@ -15,32 +15,25 @@ public class AccountController : Controller
     }
 
     public IActionResult VerificarUsuario(string nombre, string contra){
+        Console.WriteLine(nombre, contra);
         Usuario uss = BD.verificarUsuario(nombre, contra);
-        if(nombre == null || contra == null){
-//Mostrar ViewBag Error
-        return RedirectToAction("Login");
+        if(uss == null){
+            ViewBag.Error = "El usuario o la contraseña son incorrectos";
+            return View("Login");}
+        else
+        {
+            ViewBag.Usuario = uss;
+            return View("Bienvenida");
         }
-        else{
-            if(uss == null){
-//Mostrar ViewBag Error
-return RedirectToAction("Login");
-            }else{
-ViewBag.User = BD.verificarUsuario(nombre, contra);
-return RedirectToAction("Bienvenida");
-            }
-            }
-            }
+    }
     public IActionResult Registro()
     {
         return View();
     }
 
-    public IActionResult CrearUsuario(Usuario uss){
+    [HttpPost] public IActionResult CrearUsuario(Usuario uss){
         BD.añadirusuario(uss);
         ViewBag.msj = "El usuario se ha creado correctamente";
-        /*Añadir if(ViewBag.msj != null){
-        Mostrar mensaje en Login
-        }*/
         return View("Login");
     }    
 
@@ -50,13 +43,13 @@ return RedirectToAction("Bienvenida");
     }
 
     public IActionResult Recuperar(){
+ //Poner usuario y actualizar contraseña
 
-return View();
+        return View();
     }
 
     public IActionResult Bienvenida()
     {
-
-    return View();
+        return View();
     }
 }

@@ -3,11 +3,11 @@
 
 // Write your JavaScript code.
 function validarContraseña(){
-var regex = ^(?=.*[A-Z])(?=.*[$@$!%*?&-_])([A-Z\d$@$!%*?&-_]){8,12}$;
-var p1;
-var p2;
+const regex = /^(?=.*[A-Z])(?=.*[$@$!%*?&-_])([A-Z\d$@$!%*?&-_]){8,16}$/;
+let p1;
+let p2;
 if (p1 != p2) {
-    alert("Las passwords deben de coincidir");
+    alert("Las contraseñas deben de coincidir");
     return false;
   } else {
     return true; 

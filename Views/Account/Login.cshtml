@@ -6,18 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body class="gol">
+<h1><u>Inicia Sesion</u></h1>
+<form action='@Url.Action("VerificarUsuario")'>
 <div class="Login">
     <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="floatingInput" placeholder="Username">
+        <input id="nombre" name="nombre" type="text" class="form-control" id="floatingInput" placeholder="Username" required>
     </div>
     <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
-    </div>
+        <input id="contra" name="contra" type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" required>
+    </div>  
 </div>
-    <div class="Botones">
-    <button type="button" class="btn btn-primary btn-lg">¿Eres Nuevo? Registrate</button>
-    <button type="button" class="btn btn-secondary btn-lg">Olvide mi contraseña</button>
-    </div>
+<button type="submit" class="btn btn-success">Ingresar</button>
+</form>
+<div class="Botones">
+    <a href='@Url.Action("Registro")' type="button" class="btn btn-primary btn-lg">¿Eres Nuevo? Registrate</a>
+    <a href='@Url.Action("Olvide")' type="button" class="btn btn-secondary btn-lg">Olvide mi contraseña</a>
+    @if(ViewBag.msj != null){
+        <p>@ViewBag.msj</p>
+    }
+</div>
 </body>
 </html>

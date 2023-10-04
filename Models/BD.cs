@@ -24,11 +24,18 @@ public class BD{
     public static Usuario verificarUsuario(string Nombre, string Contra){
         Usuario veriUsuario = null;
         using(SqlConnection db = new SqlConnection(_connectionString)){
-            string sql = "SELECT * FROM Usuarios WHERE Username = nombre and Contraseña = contra";
+            string sql = "SELECT * FROM Usuarios WHERE Username = nombre and Contrasena = contra";
             veriUsuario = db.QueryFirstOrDefault<Usuario>(sql, new{nombre = Nombre, contra = Contra});       
         }
         return veriUsuario;
     }
+
+    public static void cambiarContraseña(string Nombre, string contra){
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+            string sql = "UPDATE Contrasena FROM Usuarios SET Contrasena = Contra WHERE Username = nombre";
+            db.Execute(sql, new{Contra = contra, nombre = Nombre});    
+        }
+            }
 
 
 }

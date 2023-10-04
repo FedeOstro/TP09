@@ -6,7 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-
+<body class="Registro">
+<form action='@Url.Action("CrearUsuario")' method="post">
+    <div class="form-floating mb-3">
+        <input id="Username" name="Username" type="text" class="form-control" id="floatingInput" placeholder="Username" required>
+    </div>
+    <div class="form-floating">
+        <input id="Contrasena" name="Contrasena" type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" required>
+    </div> 
+    <div class="form-floating mb-3">
+        <input id="Email" name="Email" type="text" class="form-control" id="floatingInput" placeholder="example@gmail.com" required>
+    </div>
+     <div class="form-floating">
+        <input id="Nombre" name="Nombre" type="Text" class="form-control" id="floatingPassword" placeholder="Nombre y Apellido" required>
+    </div> 
+     <div class="form-floating">
+        <input id="Telefono" name="Telefono" type="text" class="form-control" id="floatingPassword" placeholder="N° Telefonico" required>
+    </div> 
 </body>
 </html>
