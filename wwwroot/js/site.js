@@ -1,15 +1,11 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿function validarContraseña(contra, contra2){
+const regex = ^(?=.*[A-Z])(?=.*[$@$!%*?&-_])[A-Za-z\d$@$!%*?&-_]{8,}$;
+if(regex.test(contra) && contra === contra2){
 
-// Write your JavaScript code.
-function validarContraseña(){
-const regex = /^(?=.*[A-Z])(?=.*[$@$!%*?&-_])([A-Z\d$@$!%*?&-_]){8,16}$/;
-let p1;
-let p2;
-if (p1 != p2) {
-    alert("Las contraseñas deben de coincidir");
-    return false;
-  } else {
-    return true; 
-  }
+}else if(!regex.test(contra)){
+    alert("La contraseña no cumple con los requisitos")
+}else{
+    alert("Las contraseñas no coinciden")
+}
+
 }

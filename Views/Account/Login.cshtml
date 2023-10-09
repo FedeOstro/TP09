@@ -23,7 +23,15 @@
     <a href='@Url.Action("Registro")' type="button" class="btn btn-primary btn-lg">¿Eres Nuevo? Registrate</a>
     <a href='@Url.Action("Olvide")' type="button" class="btn btn-secondary btn-lg">Olvide mi contraseña</a>
     @if(ViewBag.msj != null){
-        <p>@ViewBag.msj</p>
+        <div class="God">
+            <p>@ViewBag.msj</p>
+        </div>
+    }
+    @if(ViewBag.Error != null){
+        <div class="Error">
+            <p>@ViewBag.Error</p>
+        </div>
+   
     }
 </div>
 </body>

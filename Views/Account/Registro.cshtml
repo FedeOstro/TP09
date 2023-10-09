@@ -7,12 +7,22 @@
     <title>Document</title>
 </head>
 <body class="Registro">
-<form action='@Url.Action("CrearUsuario")' method="post">
+<script>
+    function validarContraseña(contra, contra2) {
+    }
+</script>
+
+<form action='@Url.Action("CrearUsuario")' method="post" onsubmit="return validarContraseña(document.getElementById('Contrasena').value, document.getElementById('Contrasena2').value);">
+    <div class="regi">
+    <H1><u>Crear Usuario</u></H1>
     <div class="form-floating mb-3">
         <input id="Username" name="Username" type="text" class="form-control" id="floatingInput" placeholder="Username" required>
     </div>
     <div class="form-floating">
-        <input id="Contrasena" name="Contrasena" type="password" class="form-control" id="floatingPassword" placeholder="Contraseña" required>
+        <input id="Contrasena" name="Contrasena" type="password" class="form-control" id="floatingPassword" placeholder="Contraseña: Debe tener al menos un caracter especial, una letra en mayuscula y minimo 8 caracteres" required>
+    </div> 
+        <div class="form-floating">
+        <input id="Contrasena2" name="Contrasena" type="password" class="form-control" id="floatingPassword" placeholder="Verificar contraseña" required>
     </div> 
     <div class="form-floating mb-3">
         <input id="Email" name="Email" type="text" class="form-control" id="floatingInput" placeholder="example@gmail.com" required>
@@ -22,6 +32,11 @@
     </div> 
      <div class="form-floating">
         <input id="Telefono" name="Telefono" type="text" class="form-control" id="floatingPassword" placeholder="N° Telefonico" required>
-    </div> 
+    </div>
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Registrarse</button>
+    </div>
+</form> 
 </body>
 </html>

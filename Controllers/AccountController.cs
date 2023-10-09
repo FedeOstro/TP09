@@ -42,10 +42,17 @@ public class AccountController : Controller
         return View();
     }
 
-    public IActionResult Recuperar(){
- //Poner usuario y actualizar contraseña
-
-        return View();
+    public IActionResult Recuperar(string nombre, string contra){
+        Usuario uss = BD.verificarnombre(nombre);
+        if(uss == null){
+            ViewBag.Error = "El usuario no se encuentra en la base de datos";
+            return View("Olvide");
+        }
+        else{
+            BD.cambiarContraseña(nombre, contra);
+            ViewBag.msj = "Se cambio la contraseña correctamente";
+            return View("Login");
+        }
     }
 
     public IActionResult Bienvenida()

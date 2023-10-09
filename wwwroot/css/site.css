@@ -30,14 +30,12 @@ footer {
   background-color: gray;
   border-radius: 10px;
   margin-top: 100px;
-  margin-left: 932px;
+  margin-left: 890px;
   font-size: 20px;
 }
 
 .titulo{
-  margin: 10px;
-  margin-left: 808px;
-  margin-bottom: 40px;
+  text-align: center;
   font-size: 55px;
 }
 
@@ -62,4 +60,44 @@ footer {
   position: absolute;
   top: 250px;
   right: 760px;
+}
+
+.regi{
+  height: auto;
+  width: 800px;
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+
+.Error p{
+  color: red;
+}
+
+.God p{
+  color: green;
+}
+
+.data{
+  position: absolute;
+  left: 750px;
+  top: 150px;
+  border: 1px solid black;
+  background-color: rgb(72, 206, 72);
+  padding: 50px;
+}
+
+.form{
+  width: 500px;
+  height: auto;
+  position: absolute;
+  top: 100px;
+  left: 690px;
+}
+
+.form button{
+  margin-top: 10px;
+}
+
+.form p{
+  color: red;
 }

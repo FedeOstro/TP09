@@ -7,6 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 class="titulo">Bienvenido:@ViewBag.User.Username</h1>
+    <h1 class="titulo">¡Bienvenido! @ViewBag.Usuario.Username</h1>
+    <div class="data">
+        <h2>Datos de la cuenta: </h2>
+        <p>Email: @ViewBag.Usuario.Email</p>
+        <p>Nombre: @ViewBag.Usuario.Nombre</p>
+        <p>Telefono: @ViewBag.Usuario.Telefono</p>
+    </div>
+    <script src="~/js/confetti-index.js"></script>
+    <script src="~/js/confetti-effect.js"></script>
 </body>
 </html>
