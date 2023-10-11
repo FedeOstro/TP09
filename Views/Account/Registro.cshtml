@@ -12,7 +12,7 @@
     }
 </script>
 
-<form action='@Url.Action("CrearUsuario")' method="post" onsubmit="return validarContraseña(document.getElementById('Contrasena').value, document.getElementById('Contrasena2').value);">
+<form action='@Url.Action("CrearUsuario")' method="post" onsubmit="return validarContraseña(event, document.getElementById('Contrasena').value, document.getElementById('Contrasena2').value);">
     <div class="regi">
     <H1><u>Crear Usuario</u></H1>
     <div class="form-floating mb-3">

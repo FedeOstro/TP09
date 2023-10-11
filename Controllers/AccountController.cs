@@ -32,13 +32,17 @@ public class AccountController : Controller
     }
 
     [HttpPost] public IActionResult CrearUsuario(Usuario uss){
+        Usuario us = BD.verificarnombre(uss.Username);
+        if(us != null){
+            ViewBag.Error = "ERROR: Usuario ya existente";
+            return View("Login");
+        }
         BD.añadirusuario(uss);
         ViewBag.msj = "El usuario se ha creado correctamente";
         return View("Login");
     }    
 
     public IActionResult Olvide(){
-        
         return View();
     }
 
